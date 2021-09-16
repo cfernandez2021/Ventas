@@ -19,7 +19,7 @@ namespace ventas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("HOLA MUNDO ");
+            MessageBox.Show("Piensa , cree , sueña y atrevéte ");
         }
     }
 }
