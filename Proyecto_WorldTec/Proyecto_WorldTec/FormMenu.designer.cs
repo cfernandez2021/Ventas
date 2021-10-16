@@ -131,7 +131,7 @@
             // 
             this.SubmenuUsuario.Controls.Add(this.button7);
             this.SubmenuUsuario.Controls.Add(this.button5);
-            this.SubmenuUsuario.Location = new System.Drawing.Point(68, 266);
+            this.SubmenuUsuario.Location = new System.Drawing.Point(68, 261);
             this.SubmenuUsuario.Name = "SubmenuUsuario";
             this.SubmenuUsuario.Size = new System.Drawing.Size(229, 104);
             this.SubmenuUsuario.TabIndex = 7;
@@ -183,9 +183,9 @@
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(-3, 328);
+            this.button4.Location = new System.Drawing.Point(-3, 317);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(277, 42);
+            this.button4.Size = new System.Drawing.Size(277, 53);
             this.button4.TabIndex = 6;
             this.button4.Text = "Seguridad";
             this.button4.UseVisualStyleBackColor = false;
@@ -287,7 +287,7 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(6, 265);
+            this.button3.Location = new System.Drawing.Point(6, 261);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(271, 47);
             this.button3.TabIndex = 3;
@@ -305,9 +305,9 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 207);
+            this.button2.Location = new System.Drawing.Point(0, 197);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(277, 39);
+            this.button2.Size = new System.Drawing.Size(277, 49);
             this.button2.TabIndex = 2;
             this.button2.Text = "Clientes";
             this.button2.UseVisualStyleBackColor = false;
@@ -323,9 +323,9 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 148);
+            this.button1.Location = new System.Drawing.Point(6, 129);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(271, 43);
+            this.button1.Size = new System.Drawing.Size(271, 53);
             this.button1.TabIndex = 1;
             this.button1.Text = "Productos";
             this.button1.UseVisualStyleBackColor = false;
