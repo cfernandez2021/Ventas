@@ -291,11 +291,9 @@ namespace Proyecto_WorldTec
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Descripcion", true));
             this.descripcionTextBox.Location = new System.Drawing.Point(119, 77);
-            this.descripcionTextBox.MaxLength = 10000;
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(173, 20);
             this.descripcionTextBox.TabIndex = 4;
-            this.descripcionTextBox.TextChanged += new System.EventHandler(this.descripcionTextBox_TextChanged);
             // 
             // existenciaTextBox
             // 
@@ -444,11 +442,6 @@ namespace Proyecto_WorldTec
         {
             HabilitarDeshabilitarBotones(true);
             Eliminar(0);
-
-        }
-
-        private void descripcionTextBox_TextChanged(object sender, EventArgs e)
-        {
 
         }
     }
