@@ -37,12 +37,13 @@ namespace BL.Tecnologia
 
             _contexto.SaveChanges(); // Guadando los cambios en la Base de datos
             resultado.Exitoso = true;
+
             return resultado;
         }
         public void AgregarProducto()
         {
             var NuevoProducto = new Producto();
-            ListaProducto.Add(NuevoProducto);
+            _contexto.Productos.Add(NuevoProducto);
 
         }
 
@@ -85,6 +86,15 @@ namespace BL.Tecnologia
                 resultado.Exitoso = false;
             }
 
+            if (producto.AreaId == 0)
+            {
+                resultado.Mensaje = "Seleccione el Area";
+                resultado.Exitoso = false;
+            }
+
+
+
+
             return resultado;
         }
 
@@ -101,10 +111,20 @@ namespace BL.Tecnologia
             public string Descripcion { get; set; }
             public double Precio { get; set; }
             public int Existencia { get; set; }
+            public byte[] Imagen { get; set; }
+            public int AreaId { get; set; }
+            public Area  Area { get; set; }
             public bool Activo { get; set; }
         }
 
-        
+        public void cancelarProducto()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
+        }
     }
 }
 
