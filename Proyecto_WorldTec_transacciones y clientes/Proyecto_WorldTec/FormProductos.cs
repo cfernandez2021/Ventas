@@ -69,8 +69,8 @@ namespace Proyecto_WorldTec
             System.Windows.Forms.Label existenciaLabel;
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label precioLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             System.Windows.Forms.Label areaIdLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProductos));
             this.listaProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaProductoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -162,6 +162,15 @@ namespace Proyecto_WorldTec
             precioLabel.TabIndex = 9;
             precioLabel.Text = "Precio:";
             // 
+            // areaIdLabel
+            // 
+            areaIdLabel.AutoSize = true;
+            areaIdLabel.Location = new System.Drawing.Point(30, 114);
+            areaIdLabel.Name = "areaIdLabel";
+            areaIdLabel.Size = new System.Drawing.Size(35, 13);
+            areaIdLabel.TabIndex = 14;
+            areaIdLabel.Text = "Area :";
+            // 
             // listaProductoBindingSource
             // 
             this.listaProductoBindingSource.DataSource = typeof(BL.Tecnologia.ProductosBL.Producto);
@@ -201,8 +210,8 @@ namespace Proyecto_WorldTec
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
@@ -360,6 +369,7 @@ namespace Proyecto_WorldTec
             this.imagenPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imagenPictureBox.TabIndex = 12;
             this.imagenPictureBox.TabStop = false;
+            this.imagenPictureBox.Click += new System.EventHandler(this.imagenPictureBox_Click);
             // 
             // button1
             // 
@@ -393,15 +403,6 @@ namespace Proyecto_WorldTec
             // listadeAreasBindingSource
             // 
             this.listadeAreasBindingSource.DataSource = typeof(BL.Tecnologia.Area);
-            // 
-            // areaIdLabel
-            // 
-            areaIdLabel.AutoSize = true;
-            areaIdLabel.Location = new System.Drawing.Point(30, 114);
-            areaIdLabel.Name = "areaIdLabel";
-            areaIdLabel.Size = new System.Drawing.Size(35, 13);
-            areaIdLabel.TabIndex = 14;
-            areaIdLabel.Text = "Area :";
             // 
             // areaIdComboBox
             // 
@@ -590,6 +591,11 @@ namespace Proyecto_WorldTec
         private void button2_Click(object sender, EventArgs e)
         {
             imagenPictureBox.Image = null;
+        }
+
+        private void imagenPictureBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
