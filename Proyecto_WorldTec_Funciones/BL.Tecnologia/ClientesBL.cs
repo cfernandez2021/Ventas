@@ -27,6 +27,14 @@ namespace BL.Tecnologia
 
             return ListaClientes;
         }
+        public BindingList<Cliente> Obtenercliente(string buscar)
+        {
+
+            var resultado = _contexto.Clientes.Where(r => r.Nombre.ToLower().Contains(buscar.ToLower()));
+
+            return new BindingList<Cliente>(resultado.ToList());
+        }
+
 
         public void CancelarCambios()
         {

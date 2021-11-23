@@ -143,7 +143,7 @@ namespace Proyecto_WorldTec
             this.listadeUsuariosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listadeUsuariosBindingNavigator.Name = "listadeUsuariosBindingNavigator";
             this.listadeUsuariosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listadeUsuariosBindingNavigator.Size = new System.Drawing.Size(514, 25);
+            this.listadeUsuariosBindingNavigator.Size = new System.Drawing.Size(369, 25);
             this.listadeUsuariosBindingNavigator.TabIndex = 0;
             this.listadeUsuariosBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -334,7 +334,7 @@ namespace Proyecto_WorldTec
             // FormUsuarios
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(514, 468);
+            this.ClientSize = new System.Drawing.Size(369, 468);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.listadeUsuariosDataGridView);
             this.Controls.Add(contraseñaLabel);

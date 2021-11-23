@@ -45,6 +45,18 @@ namespace Proyecto_WorldTec
         private BindingSource productoBindingSource;
         private BindingSource listadeAreasBindingSource;
         private ComboBox areaIdComboBox;
+        private TextBox textBox1;
+        private Button button3;
+        private DataSet dataSet;
+        private BindingSource productoBindingSource1;
+        private DataSetTableAdapters.ProductoTableAdapter productoTableAdapter;
+        private DataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private DataGridView productoDataGridView;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private TextBox precioTextBox;
 
         public FormProductos()
@@ -98,6 +110,18 @@ namespace Proyecto_WorldTec
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listadeAreasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.areaIdComboBox = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dataSet = new Proyecto_WorldTec.DataSet();
+            this.productoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.productoTableAdapter = new Proyecto_WorldTec.DataSetTableAdapters.ProductoTableAdapter();
+            this.tableAdapterManager = new Proyecto_WorldTec.DataSetTableAdapters.TableAdapterManager();
+            this.productoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             activoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             existenciaLabel = new System.Windows.Forms.Label();
@@ -110,13 +134,16 @@ namespace Proyecto_WorldTec
             ((System.ComponentModel.ISupportInitialize)(this.imagenPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadeAreasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // activoLabel
             // 
             activoLabel.AutoSize = true;
             activoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            activoLabel.Location = new System.Drawing.Point(30, 196);
+            activoLabel.Location = new System.Drawing.Point(40, 198);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(48, 16);
             activoLabel.TabIndex = 1;
@@ -126,7 +153,7 @@ namespace Proyecto_WorldTec
             // 
             descripcionLabel.AutoSize = true;
             descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descripcionLabel.Location = new System.Drawing.Point(30, 77);
+            descripcionLabel.Location = new System.Drawing.Point(30, 75);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(83, 16);
             descripcionLabel.TabIndex = 3;
@@ -136,7 +163,7 @@ namespace Proyecto_WorldTec
             // 
             existenciaLabel.AutoSize = true;
             existenciaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            existenciaLabel.Location = new System.Drawing.Point(30, 142);
+            existenciaLabel.Location = new System.Drawing.Point(35, 140);
             existenciaLabel.Name = "existenciaLabel";
             existenciaLabel.Size = new System.Drawing.Size(72, 16);
             existenciaLabel.TabIndex = 5;
@@ -146,7 +173,7 @@ namespace Proyecto_WorldTec
             // 
             idLabel.AutoSize = true;
             idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idLabel.Location = new System.Drawing.Point(30, 46);
+            idLabel.Location = new System.Drawing.Point(30, 47);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(22, 16);
             idLabel.TabIndex = 7;
@@ -156,7 +183,7 @@ namespace Proyecto_WorldTec
             // 
             precioLabel.AutoSize = true;
             precioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            precioLabel.Location = new System.Drawing.Point(30, 168);
+            precioLabel.Location = new System.Drawing.Point(34, 169);
             precioLabel.Name = "precioLabel";
             precioLabel.Size = new System.Drawing.Size(50, 16);
             precioLabel.TabIndex = 9;
@@ -165,7 +192,7 @@ namespace Proyecto_WorldTec
             // areaIdLabel
             // 
             areaIdLabel.AutoSize = true;
-            areaIdLabel.Location = new System.Drawing.Point(30, 114);
+            areaIdLabel.Location = new System.Drawing.Point(30, 115);
             areaIdLabel.Name = "areaIdLabel";
             areaIdLabel.Size = new System.Drawing.Size(35, 13);
             areaIdLabel.TabIndex = 14;
@@ -202,7 +229,7 @@ namespace Proyecto_WorldTec
             this.listaProductoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaProductoBindingNavigator.Name = "listaProductoBindingNavigator";
             this.listaProductoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaProductoBindingNavigator.Size = new System.Drawing.Size(1029, 25);
+            this.listaProductoBindingNavigator.Size = new System.Drawing.Size(799, 25);
             this.listaProductoBindingNavigator.TabIndex = 0;
             this.listaProductoBindingNavigator.Text = "bindingNavigator1";
             this.listaProductoBindingNavigator.RefreshItems += new System.EventHandler(this.listaProductoBindingNavigator_RefreshItems);
@@ -317,7 +344,7 @@ namespace Proyecto_WorldTec
             // activoCheckBox
             // 
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaProductoBindingSource, "Activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(102, 191);
+            this.activoCheckBox.Location = new System.Drawing.Point(90, 195);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
             this.activoCheckBox.TabIndex = 4;
@@ -327,7 +354,7 @@ namespace Proyecto_WorldTec
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(119, 77);
+            this.descripcionTextBox.Location = new System.Drawing.Point(119, 75);
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(173, 20);
             this.descripcionTextBox.TabIndex = 1;
@@ -335,7 +362,7 @@ namespace Proyecto_WorldTec
             // existenciaTextBox
             // 
             this.existenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Existencia", true));
-            this.existenciaTextBox.Location = new System.Drawing.Point(102, 139);
+            this.existenciaTextBox.Location = new System.Drawing.Point(107, 137);
             this.existenciaTextBox.MaxLength = 10;
             this.existenciaTextBox.Name = "existenciaTextBox";
             this.existenciaTextBox.Size = new System.Drawing.Size(104, 20);
@@ -344,7 +371,7 @@ namespace Proyecto_WorldTec
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Id", true));
-            this.idTextBox.Location = new System.Drawing.Point(58, 45);
+            this.idTextBox.Location = new System.Drawing.Point(59, 43);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(104, 20);
@@ -353,7 +380,7 @@ namespace Proyecto_WorldTec
             // precioTextBox
             // 
             this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaProductoBindingSource, "Precio", true));
-            this.precioTextBox.Location = new System.Drawing.Point(102, 165);
+            this.precioTextBox.Location = new System.Drawing.Point(94, 163);
             this.precioTextBox.MaxLength = 12;
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.Size = new System.Drawing.Size(104, 20);
@@ -363,9 +390,9 @@ namespace Proyecto_WorldTec
             // 
             this.imagenPictureBox.BackColor = System.Drawing.Color.Silver;
             this.imagenPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listaProductoBindingSource, "Imagen", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.imagenPictureBox.Location = new System.Drawing.Point(340, 28);
+            this.imagenPictureBox.Location = new System.Drawing.Point(375, 43);
             this.imagenPictureBox.Name = "imagenPictureBox";
-            this.imagenPictureBox.Size = new System.Drawing.Size(181, 130);
+            this.imagenPictureBox.Size = new System.Drawing.Size(171, 130);
             this.imagenPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imagenPictureBox.TabIndex = 12;
             this.imagenPictureBox.TabStop = false;
@@ -373,7 +400,7 @@ namespace Proyecto_WorldTec
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(350, 176);
+            this.button1.Location = new System.Drawing.Point(375, 179);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -383,7 +410,7 @@ namespace Proyecto_WorldTec
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(446, 176);
+            this.button2.Location = new System.Drawing.Point(471, 179);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
@@ -411,16 +438,106 @@ namespace Proyecto_WorldTec
             this.areaIdComboBox.DisplayMember = "Descripcion";
             this.areaIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.areaIdComboBox.FormattingEnabled = true;
-            this.areaIdComboBox.Location = new System.Drawing.Point(71, 111);
+            this.areaIdComboBox.Location = new System.Drawing.Point(73, 110);
             this.areaIdComboBox.Name = "areaIdComboBox";
             this.areaIdComboBox.Size = new System.Drawing.Size(121, 21);
             this.areaIdComboBox.TabIndex = 15;
             this.areaIdComboBox.ValueMember = "ID";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(417, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(129, 20);
+            this.textBox1.TabIndex = 16;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(336, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 20);
+            this.button3.TabIndex = 17;
+            this.button3.Text = "Buscar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "DataSet";
+            this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productoBindingSource1
+            // 
+            this.productoBindingSource1.DataMember = "Producto";
+            this.productoBindingSource1.DataSource = this.dataSet;
+            // 
+            // productoTableAdapter
+            // 
+            this.productoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ClienteTableAdapter = null;
+            this.tableAdapterManager.FacturaTableAdapter = null;
+            this.tableAdapterManager.ProductoTableAdapter = this.productoTableAdapter;
+            this.tableAdapterManager.UpdateOrder = Proyecto_WorldTec.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // productoDataGridView
+            // 
+            this.productoDataGridView.AutoGenerateColumns = false;
+            this.productoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewCheckBoxColumn1});
+            this.productoDataGridView.DataSource = this.productoBindingSource1;
+            this.productoDataGridView.Location = new System.Drawing.Point(43, 251);
+            this.productoDataGridView.Name = "productoDataGridView";
+            this.productoDataGridView.Size = new System.Drawing.Size(612, 220);
+            this.productoDataGridView.TabIndex = 18;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Descripcion";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descripcion";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Precio";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Precio";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Existencia";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Existencia";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
             // FormProductos
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1029, 731);
+            this.ClientSize = new System.Drawing.Size(799, 557);
+            this.Controls.Add(this.productoDataGridView);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(areaIdLabel);
             this.Controls.Add(this.areaIdComboBox);
             this.Controls.Add(this.button2);
@@ -450,6 +567,9 @@ namespace Proyecto_WorldTec
             ((System.ComponentModel.ISupportInitialize)(this.imagenPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listadeAreasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,6 +577,8 @@ namespace Proyecto_WorldTec
 
         private void FormProductos_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'dataSet.Producto' Puede moverla o quitarla según sea necesario.
+            this.productoTableAdapter.Fill(this.dataSet.Producto);
 
         }
 
@@ -598,6 +720,24 @@ namespace Proyecto_WorldTec
         private void imagenPictureBox_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            string buscar = textBox1.Text;
+
+            
+
+            if (buscar == " ")
+            {
+                listaProductoBindingSource.DataSource = _productos.ObtenerProducto();
+            }
+            else
+            {
+                listaProductoBindingSource.DataSource = _productos.ObtenerProducto(buscar);
+            }
+            listaProductoBindingSource.ResetBindings(false);
         }
     }
 }
